@@ -1,0 +1,13 @@
+{
+  "name": "csi-bennett-community",
+  "version": "1.1.0",
+  "private": true,
+  "description": "CSI Bennett University community site with a zero-dependency Node.js + SQLite backend",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node --experimental-sqlite server.js",
+    "dev": "node --watch --experimental-sqlite server.js",
+    "setup-admin": "node --experimental-sqlite setup-admin.js",
+    "test": "node --test tests/*.test.js"
+  }
+}

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0c0c">
+  <meta name="description" content="CSI Bennett University: build, learn and connect through hackathons, workshops and student-led innovation.">
+  <title>CSI Bennett University — Built for the Curious</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav wrap" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="CSI Bennett home">
+        <span class="brand-icon">C/</span>
+        <span><b>CSI<span class="accent">.</span>BU</b><small>BENNETT UNIVERSITY</small></span>
+      </a>
+      <button class="mobile-toggle" id="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#team">Team</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#connect">Socials</a>
+
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section with CRT TV -->
+    <section class="hero" id="home">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-content wrap">
+        <div class="hero-left">
+          <div class="glitch-tag"><span class="tag-blink">//</span> COMPUTER SOCIETY OF INDIA · BENNETT UNIVERSITY</div>
+          <h1 class="hero-title">
+            <span class="line line-1">LET'S</span>
+            <span class="line line-2">BUILD</span>
+            <span class="line line-3">WHAT'S <em>NEXT.</em></span>
+          </h1>
+          <p class="hero-desc">A community of makers, hackers, designers &amp; dreamers at Bennett University. We build things that matter.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#events">Explore Events <span>→</span></a>
+            <a class="btn btn-ghost" href="https://www.instagram.com/csi.bu" target="_blank" rel="noopener noreferrer">Follow Us</a>
+          </div>
+          <div class="hero-badges">
+            <span>✦ Hackathons</span>
+            <span>✦ Workshops</span>
+            <span>✦ Community</span>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="crt-tv" id="crt-tv">
+            <div class="tv-bezel">
+              <div class="tv-screen">
+                <div class="scanlines"></div>
+                <div class="screen-glow"></div>
+                <div class="tv-content">
+                  <div class="tv-header">
+                    <div class="tv-dots"><span class="td red"></span><span class="td yellow"></span><span class="td green"></span></div>
+                    <span class="tv-title">csi@bennett:~</span>
+                  </div>
+                  <div class="tv-body" id="tv-terminal">
+                    <p><span class="prompt">$</span> whoami</p>
+                    <p class="response">CSI Bennett University</p>
+                    <p><span class="prompt">$</span> cat mission.txt</p>
+                    <p class="response">Code. Create. Collaborate.</p>
+                    <p><span class="prompt">$</span> echo "Hello, World!"</p>
+                    <p class="response accent-text">Welcome to the community<span class="blink">_</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="tv-controls">
+                <div class="tv-knob"></div>
+                <div class="tv-knob small"></div>
+                <span class="tv-brand">CSI.BU</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating draggable stickers -->
+      <div class="sticker sticker-1 draggable" data-rotate="-12">⚡ Hackathons</div>
+      <div class="sticker sticker-2 draggable" data-rotate="8">🎨 Design</div>
+      <div class="sticker sticker-3 draggable" data-rotate="-5">💻 Code</div>
+      <div class="sticker sticker-4 draggable" data-rotate="15">&lt;/&gt;</div>
+      <div class="sticker sticker-5 draggable" data-rotate="-8">🚀 Ship It</div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>CODE ✦ CREATE ✦ COLLABORATE ✦ INNOVATE ✦ HAIL CSI ✦&nbsp;</span>
+        <span>CODE ✦ CREATE ✦ COLLABORATE ✦ INNOVATE ✦ HAIL CSI ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-label animate-in">01 // ABOUT US</div>
+        <div class="about-layout">
+          <div class="about-text animate-in">
+            <h2>MORE THAN<br>A <span class="accent">TECH CLUB.</span></h2>
+            <p class="large-text">CSI Bennett University brings together makers, thinkers, creatives and curious minds to explore what technology can do.</p>
+            <p class="muted">We create opportunities to learn by doing, collaborate across disciplines and turn curiosity into real projects. No matter where you start, you belong here.</p>
+            <a class="text-link" href="#connect">Connect with us →</a>
+          </div>
+          <div class="about-cards animate-in">
+            <div class="os-window main-window">
+              <div class="window-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="window-title">mindset.exe</span></div>
+              <div class="window-body">
+                <small>THE MINDSET / 001</small>
+                <strong>Stay curious.<br>Keep shipping.</strong>
+                <p>Learn something new. Make something useful. Share it with the community.</p>
+              </div>
+            </div>
+            <div class="about-small-cards">
+              <div class="os-window">
+                <div class="window-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="window-title">learn.sh</span></div>
+                <div class="window-body"><small>002 / LEARN</small><strong>Workshops</strong><p>Build practical skills.</p></div>
+              </div>
+              <div class="os-window">
+                <div class="window-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="window-title">connect.py</span></div>
+                <div class="window-body"><small>003 / CONNECT</small><strong>Community</strong><p>Find your people.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="section section-dark" id="events">
+      <div class="wrap">
+        <div class="section-header animate-in">
+          <div><div class="section-label">02 // EVENTS &amp; HACKATHONS</div><h2>GOOD IDEAS.<br><span class="accent-secondary">GREAT ENERGY.</span></h2></div>
+          <p class="muted">Workshops, challenges and hackathons where everyone gets to make something worth sharing.</p>
+        </div>
+        <div class="cards three" id="events-list" aria-live="polite"><p class="loading">Loading events…</p></div>
+      </div>
+    </section>
+
+    <!-- Domains -->
+    <section class="section" id="domains">
+      <div class="wrap">
+        <div class="section-header animate-in">
+          <div><div class="section-label">03 // FIND YOUR SPACE</div><h2>THERE'S A <span class="accent">PLACE</span><br>FOR YOU.</h2></div>
+          <p class="muted">Different talents. Shared passion. Teams that bring great ideas to life.</p>
+        </div>
+        <div class="domain-grid animate-in">
+          <div class="domain-card"><span class="domain-icon">⌘</span><strong>Technology</strong></div>
+          <div class="domain-card"><span class="domain-icon">◈</span><strong>Design</strong></div>
+          <div class="domain-card"><span class="domain-icon">↗</span><strong>PR &amp; Outreach</strong></div>
+          <div class="domain-card"><span class="domain-icon">✦</span><strong>Multimedia</strong></div>
+          <div class="domain-card"><span class="domain-icon">∑</span><strong>Research</strong></div>
+          <div class="domain-card"><span class="domain-icon">◎</span><strong>Management</strong></div>
+          <div class="domain-card"><span class="domain-icon">✎</span><strong>Content</strong></div>
+          <div class="domain-card"><span class="domain-icon">⇄</span><strong>Sponsorship</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section section-dark" id="team">
+      <div class="wrap">
+        <div class="section-header animate-in">
+          <div><div class="section-label">04 // THE PEOPLE</div><h2>MEET THE <span class="accent-secondary">CREW.</span></h2></div>
+          <p class="muted">The students organizing, building and making our community stronger.</p>
+        </div>
+        <div class="cards four" id="team-list" aria-live="polite"><p class="loading">Loading team…</p></div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="wrap">
+        <div class="section-header animate-in">
+          <div><div class="section-label">05 // HIGHLIGHTS</div><h2>COLLECT <span class="accent">MOMENTS.</span><br>MAKE MEMORIES.</h2></div>
+          <p class="muted">A glimpse into the creativity and culture that bring CSI together.</p>
+        </div>
+        <div class="gallery-grid" id="gallery-list" aria-live="polite"><p class="loading">Loading gallery…</p></div>
+      </div>
+    </section>
+
+    <!-- Socials -->
+    <section class="section section-dark" id="connect">
+      <div class="wrap">
+        <div class="section-header animate-in">
+          <div><div class="section-label">06 // FIND US ONLINE</div><h2>FOLLOW THE <span class="accent-secondary">ENERGY.</span></h2></div>
+          <p class="muted">Announcements, opportunities, and the everyday moments in between.</p>
+        </div>
+        <div class="social-grid animate-in">
+          <a href="https://www.instagram.com/csi.bu" target="_blank" rel="noopener noreferrer" class="social-card"><span class="social-icon">IG →</span><strong>Instagram</strong><small>Club updates</small></a>
+          <a href="https://chat.whatsapp.com/Ku4c8jpl6eR2ikejQQCvCA" target="_blank" rel="noopener noreferrer" class="social-card"><span class="social-icon">WA →</span><strong>WhatsApp</strong><small>Join the community</small></a>
+          <a href="https://x.com/csi_bu" target="_blank" rel="noopener noreferrer" class="social-card"><span class="social-icon">𝕏 →</span><strong>X / Twitter</strong><small>News and ideas</small></a>
+          <a href="https://www.instagram.com/hackaccino/" target="_blank" rel="noopener noreferrer" class="social-card"><span class="social-icon">H. →</span><strong>Hackaccino</strong><small>Hackathon updates</small></a>
+          <a href="https://linktr.ee/kushwahaaadi007" target="_blank" rel="noopener noreferrer" class="social-card"><span class="social-icon">↗</span><strong>All CSI links</strong><small>Our official link hub</small></a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="#home"><span class="brand-icon">C/</span><span><b>CSI<span class="accent">.</span>BU</b><small>BENNETT UNIVERSITY</small></span></a>
+      <p>Built with curiosity. Made for the community.</p>
+      <div><a href="/admin">Admin</a> · © <span id="year"></span> CSI Bennett</div>
+    </div>
+  </footer>
+</body>
+</html>

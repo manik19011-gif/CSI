@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090d16">
+  <title>CSI Bennett — Admin</title>
+  <link rel="stylesheet" href="/styles.css"><script src="/admin.js" defer></script>
+</head>
+<body class="admin-body">
+  <header class="header"><nav class="nav wrap"><a class="brand" href="/"><span class="brand-icon">C/</span><span><b>CSI<span class="lime">.</span>BU</b><small>ADMIN PANEL</small></span></a><a class="button secondary small-button" href="/">← View website</a></nav></header>
+  <main class="wrap admin-main">
+    <section id="login-section" class="login-box"><p class="eyebrow">AUTHORIZED ACCESS</p><h1>Admin sign in</h1><p class="muted">Manage events, team profiles, gallery and student messages.</p><form id="login-form"><label>Email<input type="email" name="email" autocomplete="username" required></label><label>Password<input type="password" name="password" autocomplete="current-password" required></label><button class="button primary" type="submit">Sign in ↗</button><p class="form-status" role="status"></p></form></section>
+    <section id="dashboard" hidden>
+      <div class="admin-top"><div><p class="eyebrow">CONTROL CENTER</p><h1>Club dashboard</h1><p class="muted" id="admin-identity"></p></div><button id="logout" class="button secondary" type="button">Log out</button></div>
+      <div class="admin-tabs" role="group" aria-label="Dashboard sections"><button type="button" class="active" data-tab="events">Events</button><button type="button" data-tab="team">Team</button><button type="button" data-tab="gallery">Gallery</button><button type="button" data-tab="submissions">Submissions</button></div>
+      <div class="admin-grid" id="content-panel"><div class="panel"><h2 id="editor-title">Add event</h2><form id="editor-form"><div id="editor-fields"></div><div class="button-row"><button class="button primary" id="save-button" type="submit">Save</button><button class="button secondary" id="cancel-edit" type="button">Clear</button></div><p id="editor-status" class="form-status" role="status"></p></form></div><div class="panel"><h2>Published content</h2><div id="content-list" class="admin-list"></div></div></div>
+      <div id="submissions-panel" hidden><div class="panel"><h2>Recruitment interest & contact messages</h2><p class="muted">Only authorized admins can see these records. Change their status or delete them.</p><div id="submission-list" class="admin-list"></div></div></div>
+    </section>
+  </main>
+</body>
+</html>
