@@ -164,47 +164,7 @@ function renderEvents(items, root) {
   });
 }
 
-function renderTeam(items, root) {
-  root.replaceChildren();
-  if (!items.length) return root.append(make('p', 'muted', 'Meet the CSI core: verified member profiles will appear here as the team publishes them.'));
-  items.forEach((member, i) => {
-    const card = make('article', 'team-card');
-    const visual = make('div', `team-visual gradient-${i % 4}`);
-    if (safeLink(member.photo_url)) {
-      const img = make('img');
-      img.src = safeLink(member.photo_url);
-      img.alt = `Photo of ${member.name}`;
-      img.loading = 'lazy';
-      visual.append(img);
-    } else {
-      visual.append(make('strong', '', member.name.split(/\s+/).slice(0, 2).map(n => n[0]).join('').toUpperCase()));
-    }
-    const body = make('div', 'team-body');
-    body.append(make('small', 'eyebrow', member.department), make('h3', '', member.name), make('p', 'muted', member.role));
-    card.append(visual, body);
-    root.append(card);
-  });
-}
 
-function renderGallery(items, root) {
-  root.replaceChildren();
-  if (!items.length) return root.append(make('p', 'muted', 'More CSI moments are on their way.'));
-  items.forEach((item, i) => {
-    const tile = make('article', `gallery-tile gradient-${i % 4}`);
-    const imageUrl = safeLink(item.image_url);
-    if (imageUrl) {
-      const img = make('img');
-      img.loading = 'lazy';
-      img.src = imageUrl;
-      img.alt = item.alt_text || item.title;
-      tile.append(img);
-    }
-    const label = make('div', 'gallery-label');
-    label.append(make('small', '', item.category), make('h3', '', item.title));
-    tile.append(label);
-    root.append(tile);
-  });
-}
 
 /* ========== FORMS ========== */
 function wireForm(id, kind) {
@@ -293,6 +253,4 @@ document.querySelectorAll('#nav-links a').forEach(a =>
 /* ========== INIT ========== */
 $('year').textContent = new Date().getFullYear();
 fetchList('/api/events', renderEvents, 'events-list');
-fetchList('/api/team', renderTeam, 'team-list');
-fetchList('/api/gallery', renderGallery, 'gallery-list');
 
