@@ -177,10 +177,37 @@ async function api(req, res, pathname) {
   if (method === 'GET' && pathname === '/api/health') return send(res, 200, { ok: true, service: 'CSI Bennett API' });
   if (method === 'GET' && ['/api/events', '/api/team', '/api/gallery'].includes(pathname)) {
     const resource = pathname.slice('/api/'.length);
-    const sql = resource === 'events'
-      ? "SELECT * FROM events ORDER BY featured DESC, COALESCE(date,'9999') DESC, id DESC"
-      : `SELECT * FROM ${resource} ORDER BY id DESC`;
-    return send(res, 200, db.prepare(sql).all());
+    try {
+      const sql = resource === 'events'
+        ? "SELECT * FROM events ORDER BY featured DESC, COALESCE(date,'9999') DESC, id DESC"
+        : `SELECT * FROM ${resource} ORDER BY id DESC`;
+      return send(res, 200, db.prepare(sql).all());
+    } catch {
+      if (resource === 'events') {
+        return send(res, 200, [
+          {
+            id: 1, title: 'Hackaccino', type: 'Flagship hackathon', date: null,
+            location: 'Bennett University',
+            description: 'A hackathon community bringing builders, designers and problem-solvers together.',
+            link: 'https://www.instagram.com/hackaccino/', featured: 1
+          },
+          {
+            id: 2, title: 'HYPE 4.0 · Hack Your Profile', type: 'Workshop', date: '2026-09-28',
+            location: 'Bennett University',
+            description: 'An introduction to Git and GitHub for aspiring developers.',
+            link: 'https://luma.com/k6dsna5h', featured: 0
+          }
+        ]);
+      }
+      if (resource === 'gallery') {
+        return send(res, 200, [
+          { id: 1, title: 'Build the future', category: 'Community', image_url: '', alt_text: 'Abstract community graphic' },
+          { id: 2, title: 'Learn together', category: 'Workshops', image_url: '', alt_text: 'Abstract workshop graphic' },
+          { id: 3, title: 'Ship something great', category: 'Hackathons', image_url: '', alt_text: 'Abstract hackathon graphic' }
+        ]);
+      }
+      return send(res, 200, []);
+    }
   }
   if (method === 'POST' && pathname === '/api/submissions') {
     mutationRequest(req); limit(req, 'submission');
@@ -271,7 +298,8 @@ const server = http.createServer(async (req, res) => {
   res.setHeader('Content-Security-Policy', csp);
   try {
     const url = new URL(req.url, 'http://localhost');
-    const pathname = url.pathname;
+    let pathname = url.pathname;
+    if (pathname.startsWith('/public/api/')) pathname = pathname.slice('/public'.length);
     if (pathname.startsWith('/api/')) return await api(req, res, pathname);
     if (req.method !== 'GET' && req.method !== 'HEAD') bad('Method not allowed.', 405);
     if (!Object.hasOwn(STATIC, pathname)) bad('Page not found.', 404);
